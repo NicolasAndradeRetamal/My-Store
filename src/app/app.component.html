@@ -1,0 +1,66 @@
+<h1>ngSwitch</h1>
+<input type="text" required [(ngModel)]="person.name"/>
+<div [ngSwitch]="person.name">
+    <p *ngSwitchCase="'Nico'">
+        El nombre es Nicolás
+    </p>
+    <p *ngSwitchCase="'Mikhako'">
+        El nombre es Mikhako
+    </p>
+    <p *ngSwitchDefault>
+        No es nadie
+    </p>
+</div>
+<hr>
+<h1>*ngFor Objects</h1>
+<div *ngFor="let product of products">
+    <img [src]="product.image" [alt]="product.name">
+    <h2>{{product.price}}</h2>
+    <p>{{product.name}}</p>
+</div>
+<hr>
+<h1>*ngFor</h1>
+<input type="text" required [(ngModel)]="newName"/>
+<button (click)="addName()">Add Name</button>
+<ul>
+    <li *ngIf="names.length === 0">No hay nombres</li>
+    <li *ngFor="let str of names;index as i">{{i}}.{{str}}
+    <button (click)="deleteName(i)">Eliminar</button></li>
+</ul>
+<hr>
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="person.name"/>
+<p *ngIf="person.name === 'Nico'; else notNico">Soy Nico</p>
+<ng-template #notNico>
+    <p>No soy Nico</p>
+</ng-template>
+<hr>
+1<h1>NgModel</h1>
+<p>Nombre: {{person.name}}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name"/>
+<p>Valid: {{nameInput.valid}}</p>
+<p>Age: {{person.age}}</p>
+<input type="number" max="18" min="10" required #ageInput="ngModel" [(ngModel)]="person.age"/>
+<p>Valid: {{ageInput.valid}}</p>
+<hr>
+<h1>Eventos</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<button (click)="toggleBtn()">Toggle Button</button>
+<button (click)="increaseAge()">Age ++</button>
+<div class="box" (scroll)="onScroll($event)">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit deleniti ut nam dolorem, tempora harum magnam! Neque distinctio fugiat commodi, nobis labore earum corporis accusamus, molestias nesciunt aliquam nulla tempore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, provident aut. Quibusdam iste modi, quidem, tenetur quia consequatur accusamus error distinctio temporibus sequi, consectetur magnam vitae laudantium voluptatum excepturi atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, exercitationem magni placeat at consequuntur quae fugit vitae molestiae mollitia cumque numquam. Nesciunt praesentium cumque id quae, consequatur dignissimos voluptatum perferendis?</p>
+</div>
+<p>Nombre: {{person.name}}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
+<hr>
+<h1>Properties</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<input type="text" [value]="person.name"/>
+<progress max="100" [value]="age"></progress>
+<img width="100" [src]="person.avatar"/>
+<hr>
+<h1>Hola Mundo</h1>
+<h2>{{'Holap'.repeat(5)}}</h2>
+<p>3 + 3 = {{3+3}}</p>
+<h3>Hola, soy un {{name}}, y tengo {{age}}</h3>
+<img src={{img}} alt="Imagen">
