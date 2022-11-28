@@ -9,6 +9,7 @@ import {Product} from './product.model'
 })
 export class AppComponent {
   title:string = 'my-store';
+  widthImage:number = 10;
   name:string = 'Miatreo';
   age:number = 25;
   img:string = 'https://picsum.photos/600/400';

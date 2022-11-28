@@ -1,3 +1,20 @@
+<h1>Class & Style</h1>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name"/>
+<p class="message-error" [class.invalid]="nameInput2.invalid">
+    El campo es requerido
+</p>
+<label>Nombre</label>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name"/>
+<p [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">Sopas...</p>
+<div class="styles">
+    <div>
+        <input type="text" [(ngModel)]="widthImage"/>
+    </div>
+    <div>
+        <img [style.width.%]="widthImage" [src]="person.avatar">
+    </div>
+</div>
+<hr>
 <h1>ngSwitch</h1>
 <input type="text" required [(ngModel)]="person.name"/>
 <div [ngSwitch]="person.name">
@@ -13,10 +30,12 @@
 </div>
 <hr>
 <h1>*ngFor Objects</h1>
-<div *ngFor="let product of products">
-    <img [src]="product.image" [alt]="product.name">
-    <h2>{{product.price}}</h2>
-    <p>{{product.name}}</p>
+<div class="products--grid">
+    <div *ngFor="let product of products">
+        <img [src]="product.image" [alt]="product.name">
+        <h2>{{product.price}}</h2>
+        <p>{{product.name}}</p>
+    </div>
 </div>
 <hr>
 <h1>*ngFor</h1>
@@ -63,4 +82,4 @@
 <h2>{{'Holap'.repeat(5)}}</h2>
 <p>3 + 3 = {{3+3}}</p>
 <h3>Hola, soy un {{name}}, y tengo {{age}}</h3>
-<img src={{img}} alt="Imagen">
+<img width="200" src={{img}} alt="Imagen">
