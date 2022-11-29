@@ -21,6 +21,11 @@ export class AppComponent {
   }
   names:string[]=['Nico', 'Pedro', 'Juan', 'Franco', 'Cris'];
   newName='';
+  box={
+    width:100,
+    height:100,
+    background:'blue'
+  };
   products:Product[] =[
     {
       name: 'Resident Evil HD Remake',
