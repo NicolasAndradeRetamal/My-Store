@@ -18,7 +18,12 @@ export class AppComponent {
     name: 'Nico',
     age: 25,
     avatar: 'https://picsum.photos/600/400'
-  }
+  };
+  registro={
+    name:'',
+    email:'',
+    password:''
+  };
   names:string[]=['Nico', 'Pedro', 'Juan', 'Franco', 'Cris'];
   newName='';
   box={
@@ -79,5 +84,9 @@ export class AppComponent {
   }
   deleteName(index:number){
     this.names.splice(index, 1);
+  }
+
+  onRegister(){
+    console.log(this.person)
   }
 }
